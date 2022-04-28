@@ -69,7 +69,7 @@ const ASSET_ADDRESSES = {
 };
 
 // DISPLAY LOGIC
-tokensWithDecimalPlaces = (amount, symbol) => {
+const tokensWithDecimalPlaces = (amount, symbol) => {
   amount = amount.toString();
   switch (symbol) {
     case DAI: // 18 decimals
@@ -372,7 +372,7 @@ async function trade(
     .toString());
 
   //   Perform Trade
-  receipt = await traderContract.methods
+  const receipt = await traderContract.methods
     .getFlashloan(
       flashTokenAddress, // address flashToken,
       FLASH_AMOUNT, // uint256 flashAmount,
